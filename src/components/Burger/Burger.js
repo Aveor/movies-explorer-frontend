@@ -1,27 +1,20 @@
 import React from "react";
 import Navigation from "../Navigation/Navigation";
-
 import "./Burger.css";
 
-function Burger() {
-  const popup = document.querySelector(".burger");
-
-  function handlePopupClose(e) {
-    if (
-      e.target.classList.contains("burger") ||
-      e.target.classList.contains("burger__close-menu")
-    ) {
-      popup.classList.remove("burger_opened");
-    }
-  }
+function Burger({ loggedIn, burgerMenuOpen, burgerMenuClose }) {
 
   return (
-    <div className="burger" onClick={handlePopupClose}>
+    <div className="burger" onClick={burgerMenuClose}>
       <div className="burger__container">
-        <Navigation isLogged={true} />
+        <Navigation
+          loggedIn={loggedIn}
+          burgerMenuOpen={burgerMenuOpen}
+          burgerMenuClose={burgerMenuClose}
+        />
         <button
           className="burger__close-menu"
-          onClick={handlePopupClose}
+          onClick={burgerMenuClose}
         ></button>
       </div>
     </div>

@@ -1,177 +1,213 @@
 .profile {
-    padding-top: 74px;
-    padding-bottom: 54px;
+  padding-top: 74px;
+  padding-bottom: 54px;
+}
+
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile__title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.21;
+
+  text-align: center;
+  margin: 0;
+  margin-bottom: 123px;
+}
+
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 220px;
+}
+
+.profile__info-name {
+  display: flex;
+  justify-content: space-between;
+  min-width: 410px;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 16px;
+}
+
+.profile__info-mail {
+  display: flex;
+  justify-content: space-between;
+  min-width: 410px;
+  padding-top: 17px;
+}
+
+.profile__info-label {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: 0px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.profile__info-data {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: 0px;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: #fafafa;
+}
+
+.profile__links {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile__link {
+  margin-bottom: 16px;
+}
+
+.profile__link-edit {
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.23;
+  letter-spacing: 0px;
+  text-align: center;
+  transition: opacity linear 0.5s;
+  border: none;
+  background-color: #fafafa;
+}
+
+.profile__link-edit:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.profile__link-logout {
+  text-decoration: none;
+  color: #ee3465;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.23;
+  letter-spacing: 0px;
+  text-align: center;
+  transition: opacity linear 0.5s;
+}
+
+.profile__link-logout:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.profile__input-error {
+  color: #ee3465;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  min-height: 12px;
+  margin-bottom: 25px;
+  padding: 0;
+  border-bottom: 0;
+  max-width: 400px;
+}
+
+.profile__input-error_active {
+  display: block;
+}
+
+.profile__input-success_server {
+  color: #3456f3;
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+.profile__input-error_server {
+  color: #ee3465;
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.profile__link-edit:disabled {
+  color: #cccccc;
+}
+
+@media screen and (max-width: 900px) {
+  .profile {
+    padding-top: 236px;
+    padding-bottom: 269px;
   }
-  
-  .profile__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+
   .profile__title {
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.21;
-    
-    text-align: center;
-    margin: 0;
-    margin-bottom: 123px;
+    margin-bottom: 96px;
   }
-  
+
   .profile__info {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 220px;
+    margin-bottom: 207px;
   }
 
-  .profile__info-name {
-    display: flex;
-    justify-content: space-between;
-    min-width: 410px;
-    border-bottom: 1px solid #e8e8e8;
-    padding-bottom: 16px;
-  }
-
-  .profile__info-mail{
-    display: flex;
-    justify-content: space-between;
-    min-width: 410px;
-    padding-top: 17px;
-  }
-  
-  .profile__info-label {
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.18;
-    letter-spacing: 0px;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-  
-  .profile__info-data {
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.18;
-    letter-spacing: 0px;
-    text-align: right;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .profile__links {
-    list-style: none;
-    margin: 0;
-    margin-bottom: 16px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  .profile__info-mail {
+    padding-top: 20px;
   }
 
   .profile__link {
-    margin-bottom: 16px;
+    margin-bottom: 13px;
   }
-  
+}
+
+@media screen and (max-width: 510px) {
+  .profile {
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+
+  .profile__title {
+    margin-bottom: 80px;
+  }
+
+  .profile__info {
+    margin-bottom: 375px;
+  }
+
+  .profile__info-name {
+    min-width: 260px;
+  }
+
+  .profile__info-mail {
+    min-width: 260px;
+  }
+
+  .profile__info-container {
+    min-width: 260px;
+  }
+
   .profile__link-edit {
-    
-    text-decoration: none;
-    color: #000;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.23;
-    letter-spacing: 0px;
-    text-align: center;
-    transition: opacity linear 0.5s;
+    font-size: 12px;
+    line-height: 1.21;
   }
-  
-  .profile__link-edit:hover {
-    opacity: 0.5;
-    cursor: pointer;
-  }
-  
+
   .profile__link-logout {
-    text-decoration: none;
-    color: #EE3465;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.23;
-    letter-spacing: 0px;
-    text-align: center;
-    transition: opacity linear 0.5s;
+    font-size: 12px;
+    line-height: 1.21;
   }
-  
-  .profile__link-logout:hover {
-    opacity: 0.5;
-    cursor: pointer;
-  }
-  
-  @media screen and (max-width: 900px) {
-    .profile {
-      padding-top: 236px;
-      padding-bottom: 269px;
-    }
-  
-    .profile__title {
-      margin-bottom: 96px;
-    }
-  
-    .profile__info {
-      margin-bottom: 207px;
-    }
-
-    .profile__info-mail {
-      padding-top: 20px;
-    }
-
-    .profile__link {
-      margin-bottom: 13px;
-    }
-  }
-  
-  @media screen and (max-width: 510px) {
-    .profile {
-      padding-top: 70px;
-      padding-bottom: 40px;
-    }
-  
-    .profile__title {
-      margin-bottom: 80px;
-    }
-  
-    .profile__info {
-      margin-bottom: 375px;
-    }
-
-    .profile__info-name {
-      min-width: 260px;
-    }
-  
-    .profile__info-mail{
-      min-width: 260px;
-    }
-  
-    .profile__info-container {
-      min-width: 260px;
-    }
-  
-    .profile__link-edit {
-      font-size: 12px;
-      line-height: 1.21;
-    }
-  
-    .profile__link-logout {
-      font-size: 12px;
-      line-height: 1.21;
-    }
-  }
-  
+}

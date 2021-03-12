@@ -8,8 +8,8 @@
   justify-content: center;
   align-items: center;
   z-index: 2;
-  visibility: hidden;
-  opacity: 0;
+  visibility: visible;
+  opacity: 1;
   transition: visibility 0.5s, opacity 0.5s linear;
 }
 
@@ -27,11 +27,6 @@
   right: 0;
   margin: 0 auto;
   min-height: 100vh;
-}
-
-.burger_opened {
-  visibility: visible;
-  opacity: 1;
 }
 
 .burger__close-menu {

@@ -1,35 +1,60 @@
-import React from "react";
-
+import { useEffect } from "react";
 import "./SavedMovies.css";
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
-import Burger from "../Burger/Burger";
+import Preloader from "../Preloader/Preloader";
 import Footer from "../Footer/Footer";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
-import { moviesTemplate } from "../Movies/Movies";
 
-function SavedMovies() {
-  const [movies, setMovie] = React.useState([]);
-
-  function generateCards() {
-    for (let i = 0; i < Object.keys(moviesTemplate).length; i++) {
-      if (moviesTemplate[i].isSaved) {
-        setMovie((prevArray) => [...prevArray, moviesTemplate[i]]);
-      }
-    }
-  }
-
-  React.useEffect(() => {
-    generateCards();
-  }, []);
+function SavedMovies({
+  loggedIn,
+  moviesData,
+  currentMovies,
+  savedMovies,
+  getSavedMovies,
+  getMovies,
+  searchStatus,
+  setSearchStatus,
+  searchError,
+  setCurrentMovies,
+  addLike,
+  removeLike,
+  burgerMenuOpen,
+  burgerMenuClose,
+}) {
+  useEffect(() => {
+    getSavedMovies();
+  }, [getSavedMovies]);
 
   return (
     <>
-      <Header isLogged={true} />
-      <SearchForm />
-      <MoviesCardList loadMore={false} movies={movies} isSavedPage={true} />
-      <Burger />
-      <div className="saved-movies__devider"></div>
+      <Header
+        loggedIn={loggedIn}
+        burgerMenuOpen={burgerMenuOpen}
+        burgerMenuClose={burgerMenuClose}
+      />
+      <SearchForm
+        moviesData={moviesData}
+        getMovies={getMovies}
+        setSearchStatus={setSearchStatus}
+        setCurrentMovies={setCurrentMovies}
+      />
+      {searchStatus === "search_searching" && <Preloader />}
+      {searchStatus === "search_error" && (
+        <p className="movie-error">{searchError}</p>
+      )}
+      {(searchStatus === "search_finished" || searchStatus === "") && (
+        <MoviesCardList
+          movies={
+            currentMovies.length === 0 ? savedMovies : currentMovies
+          }
+          savedMovies={savedMovies}
+          addLike={addLike}
+          removeLike={removeLike}
+          type="saved-movies"
+        />
+      )}
+      <div className="saved-movies__divider"></div>
       <Footer />
     </>
   );
