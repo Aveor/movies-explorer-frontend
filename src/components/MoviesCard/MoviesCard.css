@@ -27,6 +27,7 @@
 }
 
 .movies-card__name {
+  max-width: 270px;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -82,4 +83,29 @@
 .movies-card__image {
   max-height: 203px;
   border-radius: 6px 6px 0 0;
+}
+
+.movies-card__movie-trailer-link {
+  max-height: 203px;
+  display: flex;
+  justify-content: center;
+}
+
+.movies-card__movie-image {
+  min-height: 203px;
+  min-width: 364px;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+}
+
+@media screen and (max-width: 900px) {
+  .movies-card__movie-image {
+    min-width: 339px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .movies-card__movie-image {
+    min-width: 300px;
+  }
 }

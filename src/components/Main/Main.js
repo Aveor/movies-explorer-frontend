@@ -7,10 +7,14 @@ import AboutMe from "../AboutMe/AboutMe";
 import Portfolio from "../Portfolio/Portfolio";
 import Footer from "../Footer/Footer";
 
-function Main() {
+function Main({ loggedIn, burgerMenuOpen, burgerMenuClose }) {
   return (
     <>
-      <Header isLogged={false} />
+      <Header
+        loggedIn={loggedIn}
+        burgerMenuOpen={burgerMenuOpen}
+        burgerMenuClose={burgerMenuClose}
+        type="landing" />
       <Promo />
       <AboutProject />
       <Techs />

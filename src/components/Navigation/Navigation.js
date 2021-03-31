@@ -1,29 +1,30 @@
+import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 import accountLogo from "../../images/Navigation/account-logo.svg";
 
-function Navigation({ isLogged }) {
-  return isLogged ? (
+function Navigation({ loggedIn, burgerMenuClose }) {
+  return loggedIn ? (
     <nav className="nav__container">
       <ul className="nav__sign">
         <li className="nav__movies">
-          <a className="nav__link nav__link_main" href="./">
+          <NavLink className="nav__link nav__link_main" to="/" onClick={burgerMenuClose}>
             Главная
-          </a>
+          </NavLink>
         </li>
         <li className="nav__movies">
-          <a className="nav__link" href="./movies">
+          <NavLink className="nav__link" to="/movies" onClick={burgerMenuClose}>
             Фильмы
-          </a>
+          </NavLink>
         </li>
         <li className="nav__saved-movies">
-          <a className="nav__link" href="./saved-movies">
+          <NavLink className="nav__link" to="/saved-movies" onClick={burgerMenuClose}>
             Сохранённые фильмы
-          </a>
+          </NavLink>
         </li>
         <li className="nav__account">
-          <a className="nav__link" href="./profile">
+          <NavLink className="nav__link" to="/profile" onClick={burgerMenuClose}>
             <img src={accountLogo} alt="Личный кабинет" />
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>
@@ -31,14 +32,14 @@ function Navigation({ isLogged }) {
       <nav className="nav__container-unlogged">
         <ul className="nav__sign_unlogged">
           <li className="nav__signup">
-            <a className="nav__link-unlogged" href="./signup">
+            <NavLink className="nav__link-unlogged" to="/signup">
               Регистрация
-          </a>
+          </NavLink>
           </li>
           <li className="nav__signin-box">
-            <a className="nav__link-unlogged" href="./signin">
+            <NavLink className="nav__link-unlogged" to="/signin">
               <p className="nav__signin-text">Войти</p>
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>
