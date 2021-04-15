@@ -9,7 +9,7 @@
 
 ### Инструкция по развертыванию проекта
 
-Клонировать репозиторий командой: git clone https://github.com/konstantinovmax/movies-explorer-frontend.git
+Клонировать репозиторий командой: git clone https://github.com/Aveor/movies-explorer-frontend.git
 Установить зависимости: npm install
 Запустить сборку на локальном сервере: npm start
 
